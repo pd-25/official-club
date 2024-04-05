@@ -90,8 +90,7 @@
     </section>
 @endsection
 @section('script')
-    <script type="text/javascript" src="{{ asset('asset/addons/jquery.smartmenus.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('asset/addons/jquery.smartmenus.bootstrap-4.js') }}"></script>
+    
     <script src="{{ asset('asset/assets/js/jquery-1.11.1.js') }}"></script>
     <!--  FANCYBOX PLUGIN -->
     <script src="{{ asset('asset/assets/js/source/jquery.fancybox.js') }}"></script>

@@ -7,8 +7,8 @@
                         class="nav-icon ti ti-comment"></i><span class="nav-title">Dashboard</span></a>
             </li>
            
-            <li ><a href="mail-inbox.html" aria-expanded="false"><i
-                        class="nav-icon ti ti-email"></i><span class="nav-title">Mail</span></a> </li>
+            <li class="{{Route::is('gallery-management.index') ? 'active' : ''}}"><a href="{{route('gallery-management.index')}}" aria-expanded="false"><i
+                        class="nav-icon ti ti-email"></i><span class="nav-title">Gallery</span></a> </li>
            
         </ul>
     </div>

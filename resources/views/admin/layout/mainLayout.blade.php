@@ -27,7 +27,7 @@
 
             @include('admin.layout.partials.sidebar')
                 
-                <div class="app-main" id="main">
+                <div class="app-main" id="main" style="margin-top: 66px !important">
                     <!-- begin container-fluid -->
                    @yield('content')
                     <!-- end container-fluid -->

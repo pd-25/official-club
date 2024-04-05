@@ -1,10 +1,12 @@
  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
      integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous">
  </script>
+ <script type="text/javascript" src="{{ asset('asset/addons/jquery.smartmenus.js') }}"></script>
+ <script type="text/javascript" src="{{ asset('asset/addons/jquery.smartmenus.bootstrap-4.js') }}"></script>
  <script src="{{ asset('asset/owl-carousel/js/owl.carousel.js') }}"></script>
  @yield('script')
 
- {{-- <script>
+ <script>
         $(document).ready(function() {
             var owl = $('#owl-events');
             owl.owlCarousel({
@@ -34,8 +36,8 @@
                 owl.trigger('stop.owl.autoplay')
             })
         })
-    </script> --}}
- {{-- <script>
+    </script>
+ <script>
         $(document).ready(function() {
             var owl = $('#owl-gallery');
             owl.owlCarousel({
@@ -65,4 +67,4 @@
                 owl.trigger('stop.owl.autoplay')
             })
         })
-    </script> --}}
+    </script>
