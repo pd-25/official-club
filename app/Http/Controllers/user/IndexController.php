@@ -3,12 +3,16 @@
 namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
+use App\Models\Event;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
     public function index(){
-        return view('user.index');
+        $data['galleries'] = Gallery::get();
+        $data['events'] = Event::orderBy('id', 'DESC')->get();
+        return view('user.index', $data);
     }
 
     public function aboutUs() {
@@ -16,15 +20,18 @@ class IndexController extends Controller
     }
 
     public function events() {
-        return view('user.events');
+        $data['events'] = Event::orderBy('id', 'DESC')->get();
+        return view('user.events',$data);
     }
 
-    public function eventsDetails($slug) {
-        return view('user.eventDetails');
+    public function eventsDetails($id) {
+        $data['event'] = Event::where('id', $id)->first();
+        return view('user.eventDetails', $data);
     }
 
     public function gallery() {
-        return view('user.gallery');
+        $data['galleries'] = Gallery::get();
+        return view('user.gallery', $data);
     }
 
     public function contactUs() {

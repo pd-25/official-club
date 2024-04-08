@@ -31,103 +31,19 @@
             </div>
 
 
-
+            @foreach ($events as $event)
             <div class="row mb-5">
                 <div class="col-lg-6 event-img">
-                    <img class="img-fluid" src="{{ asset('asset/images/event-pic.jpg') }}">
+                    <img class="img-fluid" src="{{ asset('storage/EventImage/' . $event->image) }}">
                 </div>
                 <div class="col-lg-6 event-ctn">
-                    <p class="epost-date"><span>June 01, 2020</span><span> / 12P/M. - 4P.M.</span></p>
-                    <h2>Rabindranath Tagore Birthday</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur lobortis nisl, sit amet
-                        bibendum metus sodales a. Cras porttitor a nisi non auctor. Donec eu orci eleifend, mollis enim
-                        non, scelerisque augue pellentesque non leo auctor.</p>
-                    <p>Proin efficitur lobortis nisl, sit amet bibendum metus sodales a. Cras porttitor a nisi non
-                        auctor. Donec eu orci eleifend, mollis enim non.</p>
-                    <a href="{{route('user.events-details', 'event')}}" class="rmBtn">Read More</a>
+                    <p class="epost-date"><span>{{ date('jS F Y H:i A', strtotime($event->event_date_from)) }}</span>-<span> {{ date('jS F Y H:i A', strtotime($event->event_date_to)) }}</span></p>
+                    <h2>{{ $event->title }}</h2>
+                    <p>{{ $event->long_desc }}</p>
+                    <a href="{{route('user.events-details', $event->id)}}" class="rmBtn">Read More</a>
                 </div>
             </div>
-
-
-            <div class="row mb-5">
-                <div class="col-lg-6 event-img">
-                    <img class="img-fluid" src="{{ asset('asset/images/event-pic.jpg') }}">
-                </div>
-                <div class="col-lg-6 event-ctn">
-                    <p class="epost-date"><span>June 01, 2020</span><span> / 12P/M. - 4P.M.</span></p>
-                    <h2>Rabindranath Tagore Birthday</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur lobortis nisl, sit amet
-                        bibendum metus sodales a. Cras porttitor a nisi non auctor. Donec eu orci eleifend, mollis enim
-                        non, scelerisque augue pellentesque non leo auctor.</p>
-                    <p>Proin efficitur lobortis nisl, sit amet bibendum metus sodales a. Cras porttitor a nisi non
-                        auctor. Donec eu orci eleifend, mollis enim non.</p>
-                    <a href="{{route('user.events-details', 'event')}}" class="rmBtn">Read More</a>
-                </div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-lg-6 event-img">
-                    <img class="img-fluid" src="{{ asset('asset/images/event-pic.jpg') }}">
-                </div>
-                <div class="col-lg-6 event-ctn">
-                    <p class="epost-date"><span>June 01, 2020</span><span> / 12P/M. - 4P.M.</span></p>
-                    <h2>Rabindranath Tagore Birthday</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur lobortis nisl, sit amet
-                        bibendum metus sodales a. Cras porttitor a nisi non auctor. Donec eu orci eleifend, mollis enim
-                        non, scelerisque augue pellentesque non leo auctor.</p>
-                    <p>Proin efficitur lobortis nisl, sit amet bibendum metus sodales a. Cras porttitor a nisi non
-                        auctor. Donec eu orci eleifend, mollis enim non.</p>
-                    <a href="{{route('user.events-details', 'event')}}" class="rmBtn">Read More</a>
-                </div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-lg-6 event-img">
-                    <img class="img-fluid" src="{{ asset('asset/images/event-pic.jpg') }}">
-                </div>
-                <div class="col-lg-6 event-ctn">
-                    <p class="epost-date"><span>June 01, 2020</span><span> / 12P/M. - 4P.M.</span></p>
-                    <h2>Rabindranath Tagore Birthday</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur lobortis nisl, sit amet
-                        bibendum metus sodales a. Cras porttitor a nisi non auctor. Donec eu orci eleifend, mollis enim
-                        non, scelerisque augue pellentesque non leo auctor.</p>
-                    <p>Proin efficitur lobortis nisl, sit amet bibendum metus sodales a. Cras porttitor a nisi non
-                        auctor. Donec eu orci eleifend, mollis enim non.</p>
-                    <a href="{{route('user.events-details', 'event')}}" class="rmBtn">Read More</a>
-                </div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-lg-6 event-img">
-                    <img class="img-fluid" src="{{ asset('asset/images/event-pic.jpg') }}">
-                </div>
-                <div class="col-lg-6 event-ctn">
-                    <p class="epost-date"><span>June 01, 2020</span><span> / 12P/M. - 4P.M.</span></p>
-                    <h2>Rabindranath Tagore Birthday</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur lobortis nisl, sit amet
-                        bibendum metus sodales a. Cras porttitor a nisi non auctor. Donec eu orci eleifend, mollis enim
-                        non, scelerisque augue pellentesque non leo auctor.</p>
-                    <p>Proin efficitur lobortis nisl, sit amet bibendum metus sodales a. Cras porttitor a nisi non
-                        auctor. Donec eu orci eleifend, mollis enim non.</p>
-                    <a href="{{route('user.events-details', 'event')}}" class="rmBtn">Read More</a>
-                </div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-lg-6 event-img">
-                    <img class="img-fluid" src="{{ asset('asset/images/event-pic.jpg') }}">
-                </div>
-                <div class="col-lg-6 event-ctn">
-                    <p class="epost-date"><span>June 01, 2020</span><span> / 12P/M. - 4P.M.</span></p>
-                    <h2>Rabindranath Tagore Birthday</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur lobortis nisl, sit amet
-                        bibendum metus sodales a. Cras porttitor a nisi non auctor. Donec eu orci eleifend, mollis enim
-                        non, scelerisque augue pellentesque non leo auctor.</p>
-                    <p>Proin efficitur lobortis nisl, sit amet bibendum metus sodales a. Cras porttitor a nisi non
-                        auctor. Donec eu orci eleifend, mollis enim non.</p>
-                    <a href="{{route('user.events-details', 'event')}}" class="rmBtn">Read More</a>
-                </div>
-            </div>
+            @endforeach
 
 
 

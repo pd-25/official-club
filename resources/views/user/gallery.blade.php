@@ -52,12 +52,15 @@
             </div>
 
             <div class="row text-center" id="portfolio-div">
-                <div class="col-md-4 col-sm-4 Categorie1">
-                    <a class="fancybox-media" title="" href="{{asset('asset/images/gallery/gal-pic1.jpg')}}">
-                        <img src="{{ asset('asset/images/gallery/gal-pic1.jpg') }}" class="img-fluid " alt="" />
+                @foreach ($galleries as $gallerie)
+                <div class="col-md-4 col-sm-4 Categorie{{$gallerie->category_name}}">
+                    <a class="fancybox-media" title="" href="{{asset('storage/GalleryImage/' . $gallerie->image)}}">
+                        <img src="{{ asset('storage/GalleryImage/' . $gallerie->image) }}" class="img-fluid " alt="" />
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-4 Categorie2">
+                @endforeach
+                
+                {{-- <div class="col-md-4 col-sm-4 Categorie2">
                     <a class="fancybox-media" title="" href="{{asset('asset/images/gallery/gal-pic2.jpg')}}">
                         <img src="{{ asset('asset/images/gallery/gal-pic2.jpg') }}" class="img-fluid " alt="" />
                     </a>
@@ -77,7 +80,7 @@
                     <a class="fancybox-media" title="" href="{{asset('asset/images/gallery/gal-pic111.jpg')}}">
                         <img src="{{ asset('asset/images/gallery/gal-pic111.jpg') }}" class="img-fluid " alt="" />
                     </a>
-                </div>
+                </div> --}}
 
 
             </div>

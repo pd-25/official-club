@@ -52,7 +52,7 @@
                             <div id="navbarNav" class="collapse navbar-collapse">
                                 <ul class="nav navbar-nav ml-auto mt-3">
                                     <li class="nav-item active">
-                                        <a href="index.html" class="nav-link">Home</a>
+                                        <a href="{{route('user.home')}}" class="nav-link">Home</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="{{route('user.about-us')}}" class="nav-link">About Us</a>

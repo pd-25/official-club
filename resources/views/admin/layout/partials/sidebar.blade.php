@@ -4,11 +4,13 @@
         <ul class="metismenu " id="sidebarNav">
             
             <li class="{{Route::is('admin.dashboard') ? 'active' : ''}}"><a href="{{route('admin.dashboard')}}" aria-expanded="false"><i
-                        class="nav-icon ti ti-comment"></i><span class="nav-title">Dashboard</span></a>
+                        class="nav-icon ti ti-layout"></i><span class="nav-title">Dashboard</span></a>
             </li>
            
             <li class="{{Route::is('gallery-management.index') ? 'active' : ''}}"><a href="{{route('gallery-management.index')}}" aria-expanded="false"><i
-                        class="nav-icon ti ti-email"></i><span class="nav-title">Gallery</span></a> </li>
+                        class="nav-icon ti ti-gallery"></i><span class="nav-title">Gallery</span></a> </li>
+            <li class="{{Route::is('events.index') ? 'active' : ''}}"><a href="{{route('events.index')}}" aria-expanded="false"><i
+                class="nav-icon ti ti-briefcase"></i><span class="nav-title">Events</span></a> </li>
            
         </ul>
     </div>

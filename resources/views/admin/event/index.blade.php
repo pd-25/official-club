@@ -49,10 +49,10 @@
             <div class="card card-statistics">
                 <div class="card-header justify-content-between d-flex">
                     <div class="card-heading">
-                        <h4 class="card-title">Gallery List</h4>
+                        <h4 class="card-title">Event List</h4>
                        
                     </div>
-                    <a href="{{ route('gallery-management.create') }}" class="btn btn-primary btn-xs">Add Image</a>
+                    <a href="{{ route('events.create') }}" class="btn btn-primary btn-xs">Add Event</a>
                 </div>
                 @if (Session::has('msg'))
                 <div class="row">
@@ -73,39 +73,32 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Category Name</th>
-                                    <th scope="col">Image</th>
+                                    <th scope="col">Event Title</th>
+                                    <th scope="col">Short Desc</th>
+                                    <th scope="col">Long Desc</th>
+                                    <th scope="col">Date From</th>
+                                    <th scope="col">Date To</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @if ($galleries->count() > 0)
-                                    @foreach ($galleries as $gallerie)
+                                @if ($events->count() > 0)
+                                    @foreach ($events as $event)
                                         <tr>
                                             <th scope="row">{{ $loop->iteration }}</th>
-                                            @php
-                                                if ($gallerie->category_name == '1') {
-                                                    $category = 'Category 1';
-                                                }
-                                                if ($gallerie->category_name == '2') {
-                                                    $category = 'Category 2';
-                                                }
-                                                if ($gallerie->category_name == '3') {
-                                                    $category = 'Category 3';
-                                                }
-                                                if ($gallerie->category_name == '4') {
-                                                    $category = 'Category 4';
-                                                }
-                                            @endphp
-                                            <td>{{ $category }}</td>
-                                            <td><img src="{{ asset('storage/GalleryImage/' . $gallerie->image) }}"
+                                            <td>{{\Illuminate\Support\Str::limit(@$event->title, $limit = 10, $end = '...') }}</td>
+                                            <td>{{\Illuminate\Support\Str::limit(@$event->short_desc, $limit = 10, $end = '...') }}</td>
+                                            <td>{{\Illuminate\Support\Str::limit(@$event->long_desc, $limit = 10, $end = '...') }}</td>
+                                            <td>{{date("jS F Y H:i A", strtotime($event->event_date_from))}}</td>
+                                            <td>{{date("jS F Y H:i A", strtotime($event->event_date_to))}}</td>
+                                            <td><img src="{{ asset('storage/EventImage/' . $event->image) }}"
                                                     height="110px" width="150px" alt=""></td>
                                             <td> <a class="mr-3"
-                                                    href="{{ route('gallery-management.edit', $gallerie->id) }}"><i
+                                                    href="{{ route('events.edit', $event->id) }}"><i
                                                         class="fe fe-edit"></i>
                                                 </a>
                                                 <form method="POST"
-                                                    action="{{ route('gallery-management.destroy', $gallerie->id) }}"
+                                                    action="{{ route('events.destroy', $event->id) }}"
                                                     class="action-icon d-inline-block pl-2">
                                                     @csrf
                                                     @method('DELETE')
