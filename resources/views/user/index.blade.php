@@ -85,18 +85,22 @@
 
             </div>
             <div class="row">
+                @foreach ($activities as $activity)
+                    
+               
                 <div class="col-lg-4">
                     <div class="activities-box">
-                        <img src="{{ asset('asset/images/act-pic1.jpg') }}" class="img-fluid">
+                        <img src="{{ asset('storage/ActivityImage/' . $activity->image) }}" class="img-fluid">
                         <div class="activities-boxCtn">
-                            <h3>Music Class</h3>
-                            <p>Officers club, SgTPP facilitates Music class for Members & their wards.</p>
-                            <a href="" class="rmBtn">Read More</a>
+                            <h3>{{$activity->title}}</h3>
+                            <p>{{\Illuminate\Support\Str::limit(@$activity->desc, $limit = 50, $end = '...') }}</p>
+                            <a href="{{route('user.activity-details', $activity->id)}}" class="rmBtn">Read More</a>
                         </div>
                     </div>
                 </div>
+                @endforeach
 
-                <div class="col-lg-4">
+                {{-- <div class="col-lg-4">
                     <div class="activities-box">
                         <img src="{{ asset('asset/images/act-pic2.jpg') }}" class="img-fluid">
                         <div class="activities-boxCtn">
@@ -116,11 +120,11 @@
                             <a href="" class="rmBtn">Read More</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
             </div>
 
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-lg-4">
                     <div class="activities-box">
                         <img src="{{ asset('asset/images/act-pic4.jpg') }}" class="img-fluid">
@@ -154,7 +158,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> --}}
         </div>
     </section>
 
