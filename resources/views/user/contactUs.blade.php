@@ -22,8 +22,8 @@
 
             <div class="col-lg-8">
                 <!-- <form role="form" action="smtp_mail/mail_1.php" method="post" id="contact-form">-->
-                <form id="contact-form" method="post" action="javascript:void(0)" role="form">
-
+                <form id="contact-form" method="post" action="{{route('user.contactUsMail')}}" role="form">
+@csrf
                     <div class="controls">
                         <div class="row">
                             <div class="col-md-6">
